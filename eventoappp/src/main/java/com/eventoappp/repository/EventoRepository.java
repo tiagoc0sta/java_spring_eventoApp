@@ -1,5 +1,10 @@
 package com.eventoappp.repository;
 
-public interface EventoRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.eventoappp.models.Evento;
+
+public interface EventoRepository extends CrudRepository<Evento, String>{
+	
 
 }
