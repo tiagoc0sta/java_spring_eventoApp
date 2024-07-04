@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 public class Evento implements Serializable{
@@ -15,17 +16,24 @@ public class Evento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO )
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long codigo;
-	
+
+	@NotEmpty
 	private String nome;
+	
+	@NotEmpty
 	private String local;
+	
+	@NotEmpty
 	private String data;
+
+	@NotEmpty
 	private String horario;
 	
 	@OneToMany
 	private List<Convidado> convidados;
-		
+	
 	public long getCodigo() {
 		return codigo;
 	}
@@ -58,6 +66,4 @@ public class Evento implements Serializable{
 	}
 	
 	
-	
-
 }
